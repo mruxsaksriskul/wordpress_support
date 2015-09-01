@@ -1,0 +1,38 @@
+
+
+
+server {
+        listen        *:80;
+        root          <%= node['nginx']['default_root'] %>;
+
+        access_log <%= node['nginx']['log_dir'] %>/localhost.access.log;
+        error_log <%= node['nginx']['log_dir'] %>/error.log.2;
+
+
+index index.php;
+
+location / {
+try_files $uri $uri/ /index.php?$args;
+}
+error_page 404 /404.html;
+location = /404.html {
+root <%= node['nginx']['default_root'] %>;
+}
+
+error_page 500 502 503 504 /50x.html;
+location = /50x.html {
+root <%= node['nginx']['default_root'] %>;
+}
+
+location ~ \.php$ {
+#root /usr/share/nginx/html;
+root <%= node['nginx']['default_root'] %>;
+index index.php;
+include fastcgi_params;
+fastcgi_pass unix:/var/run/php-fpm-www.sock;
+fastcgi_index index.php;
+#fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
+fastcgi_param SCRIPT_FILENAME $request_filename;
+}
+}
+
