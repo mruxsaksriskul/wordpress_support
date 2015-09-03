@@ -1,0 +1,7 @@
+{
+  "id": "paasopt",
+  "github_token": "0123456789",
+  "git_key": "<@GIT_SSH_KEY@>",
+  "github_username": "PaaS-Optimization",
+  "github_email": "PaaS-Optimization@gannett.com"
+  }
