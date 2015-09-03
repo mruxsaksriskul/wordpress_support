@@ -47,4 +47,8 @@ it 'installs wordpress config template' do
   expect(chef_run).to create_template('/var/www/wordpress/wp-config.php')
 end
 
+it 'installs wordpress file using ark' do
+  expect(chef_run).to dump_ark('wordpress')
+end
+
 end
