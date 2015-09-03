@@ -31,24 +31,23 @@ describe 'chef-wordpresswrapper' do
     expect(chef_run).to include_recipe('nginx')
   end
 
-it 'installs package php-mysql' do
+  it 'installs package php-mysql' do
     expect(chef_run).to install_package('php-mysql')
-    end
+  end
 
-it 'installs package Zend Memcache' do
+  it 'installs package Zend Memcache' do
     expect(chef_run).to install_package('php-ZendFramework-Cache-Backend-Libmemcached')
-    end
+  end
 
-it 'installs wordpress nginx template' do
-expect(chef_run).to create_template('/etc/nginx/conf.d/wordpress.conf')
-end
+  it 'installs wordpress nginx template' do
+    expect(chef_run).to create_template('/etc/nginx/conf.d/wordpress.conf')
+  end
 
-it 'installs wordpress config template' do
-  expect(chef_run).to create_template('/var/www/wordpress/wp-config.php')
-end
+  it 'installs wordpress config template' do
+    expect(chef_run).to create_template('/var/www/wordpress/wp-config.php')
+  end
 
-it 'installs wordpress file using ark' do
-  expect(chef_run).to dump_ark('wordpress')
-end
-
+  it 'installs wordpress file using ark' do
+    expect(chef_run).to dump_ark('wordpress')
+  end
 end
