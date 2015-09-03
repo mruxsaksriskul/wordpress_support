@@ -8,7 +8,7 @@ describe 'php-fpm' do
   let(:chef_run) do
     ChefSpec::SoloRunner.new do |node|
       stub_command('which php-fpm').and_return(true)
-      stub_command("test -d /etc/php-fpm.d || mkdir -p /etc/php-fpm.d").and_return('')
+      stub_command('test -d /etc/php-fpm.d || mkdir -p /etc/php-fpm.d').and_return('')
     end.converge(described_recipe)
   end
 

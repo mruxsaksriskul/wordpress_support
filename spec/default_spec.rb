@@ -10,7 +10,7 @@ describe 'chef-wordpresswrapper' do
       node.set['opsmatic']['integration_token'] = 'SomeToken'
       stub_command('which sudo').and_return('/usr/bin/sudo')
       stub_command('which nginx').and_return('/usr/sbin/nginx')
-      node.set['authorization']['sudo']['groups'] = ['admin', 'wheel', 'test']
+      node.set['authorization']['sudo']['groups'] = %w(admin wheel test)
       node.set['ssh_keys'] = ''
       node.default['ssh_keys'] = { test: ['test'] }
       node.set['users']['teams'] = ['test']
