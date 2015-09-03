@@ -22,14 +22,29 @@ describe 'chef-wordpresswrapper' do
       stub_data_bag_item('users', 'blieberman').and_return(id: 'blieberman', team: 'test', ssh_keys: 'derp_key', administrator: 'true', group: 'test')
       stub_data_bag_item('users', 'akemner').and_return(id: 'akemner', team: 'test', ssh_keys: 'derp_key', administrator: 'true', group: 'test')
       stub_data_bag_item('users', 'nessus').and_return(id: "nessus", team: "test", ssh_keys: "derp_key", administrator: "true", group: "test")
-      stub_data_bag_item("wordpress", "greenbay").and_return(id: 'greenbay' ,site_name: 'blogs.greenbay.com', db_name: 'greenbaydb', db_user: 'gblogadmin', db_password: 'hAiw39rdk')
-      
+      stub_data_bag_item('wordpress', 'greenbay').and_return(id: 'greenbay' ,site_name: 'site', db_name: 'db', db_user: 'dbuser', db_password: 'derp')
+      stub_command("test -d /etc/php-fpm.d || mkdir -p /etc/php-fpm.d").and_return('') 
     end.converge(described_recipe)
   end
-
 
   it 'includes the recipe nginx' do
     expect(chef_run).to include_recipe('nginx')
   end
+
+it 'installs package php-mysql' do
+    expect(chef_run).to install_package('php-mysql')
+    end
+
+it 'installs package Zend Memcache' do
+    expect(chef_run).to install_package('php-ZendFramework-Cache-Backend-Libmemcached')
+    end
+
+it 'installs wordpress nginx template' do
+expect(chef_run).to create_template('/etc/nginx/conf.d/wordpress.conf')
+end
+
+it 'installs wordpress config template' do
+  expect(chef_run).to create_template('/var/www/wordpress/wp-config.php')
+end
 
 end

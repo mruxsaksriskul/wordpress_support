@@ -3,7 +3,7 @@ require 'chefspec'
 require 'spec_helper'
 require 'fauxhai'
 
-describe 'chef-wordpresswrapper::nginx' do
+describe 'nginx' do
   
   let(:chef_run) do
     ChefSpec::SoloRunner.new do |node|
