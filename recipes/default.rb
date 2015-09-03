@@ -46,8 +46,8 @@ template "#{node['wordpress']['dir']}/wp-config.php" do
     :db_charset => node['wordpress']['db']['charset'],
     :db_collate => node['wordpress']['db']['collate'],
     :db_host => node['wordpress']['db']['host'],
-    :db_user => data ['db_user'],
-    :db_name => data ['db_name'],
+    :db_user => data['db_user'],
+    :db_name => data['db_name'],
     :db_password => data ['db_password']
   )
 end

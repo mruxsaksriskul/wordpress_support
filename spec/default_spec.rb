@@ -21,9 +21,9 @@ describe 'chef-wordpresswrapper' do
       stub_data_bag_item('users', 'jcrawford').and_return(id: 'jcrawford', team: 'test', ssh_keys: 'derp_key', administrator: 'true', group: 'test')
       stub_data_bag_item('users', 'blieberman').and_return(id: 'blieberman', team: 'test', ssh_keys: 'derp_key', administrator: 'true', group: 'test')
       stub_data_bag_item('users', 'akemner').and_return(id: 'akemner', team: 'test', ssh_keys: 'derp_key', administrator: 'true', group: 'test')
-      stub_data_bag_item('users', 'nessus').and_return(id: "nessus", team: "test", ssh_keys: "derp_key", administrator: "true", group: "test")
+      stub_data_bag_item('users', 'nessus').and_return(id: 'nessus', team: 'test', ssh_keys: 'derp_key', administrator: 'true', group: 'test')
       stub_data_bag_item('wordpress', 'greenbay').and_return(id: 'greenbay' ,site_name: 'site', db_name: 'db', db_user: 'dbuser', db_password: 'derp')
-      stub_command("test -d /etc/php-fpm.d || mkdir -p /etc/php-fpm.d").and_return('') 
+      stub_command('test -d /etc/php-fpm.d || mkdir -p /etc/php-fpm.d').and_return('')
     end.converge(described_recipe)
   end
 
