@@ -1,5 +1,5 @@
 #
-# Cookbook Name:: chef-wordpresswrapper
+# Cookbook Name:: chef-wordpress_support
 # Recipe:: default
 #
 # Copyright (C) 2015 YOUR_NAME
@@ -7,7 +7,7 @@
 # All rights reserved - Do Not Redistribute
 #
 
-include_recipe 'gdp-base-linux'
+include_recipe 'yum-epel'
 include_recipe 'php'
 include_recipe 'php-fpm'
 include_recipe 'nginx'

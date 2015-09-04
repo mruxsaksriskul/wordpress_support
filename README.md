@@ -2,7 +2,7 @@
 
 This cookbook installs the web components for Wordpress.  
 
-Nginx, PHP, PHP-Fpm, and Wordpress, along with the GDP base Linux.
+Nginx, PHP, PHP-Fpm, and Wordpress, 
 
 It also contains a template for Nginx to run PHP-FPM.
 
@@ -13,7 +13,7 @@ It also contains a template for Nginx to run PHP-FPM.
  *  chef-nginx - To install Nginx.
  *  chef-php - To install PHP.
  *  chef-php-fpm - To install the PHP-FPM.
- *  chef-gdp-base-linux - To install the base components needed on the server.
+ *  yum-epel - To install some components needed on the server.
  
 ##  Data Bags
 
@@ -51,14 +51,14 @@ Supports Centos 6.X
 
 ## Usage
 
-### chef-wordpresswrapper::default
+### chef-wordpress_support::default
 
-Include `chef-wordpresswrapper` in your node's `run_list`:
+Include `chef-wordpress_support` in your node's `run_list`:
 
 ```json
 {
   "run_list": [
-    "recipe[chef-wordpresswrapper::default]"
+    "recipe[chef-wordpress_support::default]"
   ]
 }
 ```
@@ -66,5 +66,5 @@ Include `chef-wordpresswrapper` in your node's `run_list`:
 ## License and Authors
 
 Author:: Carl Eichhorn, Mike Ruxsaksriskul
-# chef-wordpresswrapper
+# chef-wordpress_support
 

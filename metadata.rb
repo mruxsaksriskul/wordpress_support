@@ -6,7 +6,7 @@ description      'Installs/Configures wordpress_support'
 long_description 'Installs/Configures wordpress_support'
 version          '0.1.1'
 
-depends 'gdp-base-linux'
+depends 'yum-epel'
 depends 'php'
 depends 'php-fpm', '~> 0.7.0'
 depends 'nginx', '>= 2.7.4'
