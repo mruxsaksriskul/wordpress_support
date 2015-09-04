@@ -4,6 +4,7 @@ This cookbook installs the web components for Wordpress.
 
 Nginx, PHP, PHP-Fpm, and Wordpress, along with the GDP base Linux.
 
+It also contains a template for Nginx to run PHP-FPM.
 
 ###  Requirements
 
@@ -12,11 +13,11 @@ Nginx, PHP, PHP-Fpm, and Wordpress, along with the GDP base Linux.
  *  chef-nginx - To install Nginx.
  *  chef-php - To install PHP.
  *  chef-php-fpm - To install the PHP-FPM.
- *  cjef-gdp-base-linux - To install the base cxomponentsa needes on the server.
+ *  chef-gdp-base-linux - To install the base components needed on the server.
  
 ##  Data Bags
 
-Each site will require a wordpress databag with the following:
+Each site will require a wordpress databag like the following:
 
 {
   "id": "vabig",
@@ -41,9 +42,9 @@ Supports Centos 6.X
     <th>Default</th>
   </tr>
   <tr>
-    <td><tt>['chef-wordpresswrapper']['bacon']</tt></td>
+    <td><tt>['wordpress']['databag']['site']</tt></td>
     <td>Boolean</td>
-    <td>whether to include bacon</td>
+    <td>what site databag to include</td>
     <td><tt>true</tt></td>
   </tr>
 </table>
