@@ -7,6 +7,7 @@
 # All rights reserved - Do Not Redistribute
 #
 
+include_recipe 'gdp-base-linux'
 include_recipe 'php'
 include_recipe 'php-fpm'
 include_recipe 'nginx'
