@@ -1,11 +1,9 @@
 #
-# Cookbook Name:: nginx
+# Cookbook Name:: chef-wordpress_support
 # Attributes:: default
 #
-# Author:: Adam Jacob (<adam@opscode.com>)
-# Author:: Joshua Timberman (<joshua@opscode.com>)
+# Author:: Carl Eichhorn (<ceichhorn@gannett.com>)
 #
-# Copyright 2009-2013, Opscode, Inc.
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -23,6 +21,7 @@
 # In order to update the version, the checksum attribute must be changed too.
 # This attribute is in the source.rb file, though we recommend overriding
 # attributes by modifying a role, or the node itself.
+
 default['nginx']['version']      = '1.4.4'
 default['nginx']['package_name'] = 'nginx'
 default['nginx']['dir']          = '/etc/nginx'
@@ -44,14 +43,23 @@ default['wordpress']['db']['root_password'] = 'my_root_password'
 default['wordpress']['db']['instance_name'] = 'default'
 default['wordpress']['db']['name'] = 'wordpressdb'
 default['wordpress']['db']['user'] = 'wordpressuser'
-default['wordpress']['db']['pass'] = 'iwiwiwiwi875'
+default['wordpress']['db']['pass'] = 'wordpresspass'
 default['wordpress']['db']['prefix'] = 'wp_'
 default['wordpress']['db']['host'] = 'localhost'
 default['wordpress']['db']['port'] = '3306' # Must be a string
 default['wordpress']['db']['charset'] = 'utf8'
 default['wordpress']['db']['collate'] = ''
-default['wordpress']['databag']['site'] = 'greenbay'
+default['wordpress']['databag']['site'] = 'vabig'
 default['wordpress']['databag']['name'] = 'wordpress'
+
+default['wordpress']['key']['auth'] = 'Nq9=MIM]h8l5a0oZ7Hzq#u%rEx3^S U5zSzR05+_!mc#...GLIE%R|-lf-=ceUzS'
+default['wordpress']['key']['secure'] = '+[4(&KgMyEKVk<Sg:JV:VOiby+S,~EP:SZk>Jc*j, fl4tWH-P1w=n;4,W?DL*82'
+default['wordpress']['key']['logged'] = ':2.YI~VI+% Ysp&GYQ8).Q]1)~(CDWc({YBp^+1/F]Sw?)0^{0zN$:7uy+vZrC@_'
+default['wordpress']['key']['nonce'] = 'd^DEq/T_4[~x^|7f{fbc$-VL{[}q|)QFosS|t;xRVx  /UG3K)X#86pAkTbfP`;_'
+default['wordpress']['salt']['auth'] = 'TU=c|gp9Hc2,#@VlmdnS0M|J>o#Q}8K8yd&Q8+t|%JUr+61pC^KTJdpyths|ADen'
+default['wordpress']['salt']['secure'] = '^9l%1_~e!FJUfP<)(^C*7/7tU3_{%xx8+HxH[-!w?a>0J^Ox-+YYF ~ue2,@Z}){'
+default['wordpress']['salt']['logged'] = '|RS`rH(4KSF?1ky];yqb/f^T_f~zD@eIY>$2v`|vJp/,Te9tR^^Wzy#Uc;h#,yF{'
+default['wordpress']['salt']['nonce'] = '6A*|POAGB(=f:v9k[paZa|IfN2n(e]u`z;~8~[+xcO[[dNM~->8+dVf]Y%&zn,c^'
 
 case node['platform_family']
 when 'debian'

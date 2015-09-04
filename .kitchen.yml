@@ -13,5 +13,5 @@ suites:
   - name: default
     run_list:
      - recipe[data-bag-faker]
-     - recipe[chef-wordpresswrapper::default]
+     - recipe[chef-wordpress_support::default]
     attributes:
