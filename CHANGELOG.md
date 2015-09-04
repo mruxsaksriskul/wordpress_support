@@ -1,3 +1,3 @@
 # 0.1.0
 
-Initial release of chef-wordpresswrapper
+Initial release of chef-wordpress_support
