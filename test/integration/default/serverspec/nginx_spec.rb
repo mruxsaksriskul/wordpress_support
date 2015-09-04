@@ -1,4 +1,4 @@
-re_relative 'spec_helper'
+require_relative 'spec_helper'
 
 describe service('nginx') do
   it { should be_enabled }
