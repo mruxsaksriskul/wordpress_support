@@ -7,4 +7,3 @@ end
 describe group('nobody') do
   it { should exist }
 end
-

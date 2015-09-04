@@ -8,4 +8,3 @@ end
 describe file('/etc/nginx/conf.d/wordpress.conf') do
   it { should exist }
 end
-
