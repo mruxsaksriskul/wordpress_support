@@ -4,7 +4,7 @@ require 'spec_helper'
 require 'fauxhai'
 
 
-describe 'chef-wordpresswrapper' do
+describe 'chef-wordpress_support' do
   let(:chef_run) do
     ChefSpec::SoloRunner.new do |node|
       node.set['opsmatic']['integration_token'] = 'SomeToken'
@@ -22,7 +22,7 @@ describe 'chef-wordpresswrapper' do
       stub_data_bag_item('users', 'blieberman').and_return({ id: 'blieberman', team: 'test', ssh_keys: 'derp_key', administrator: 'true', group: 'test' })
       stub_data_bag_item('users', 'akemner').and_return({ id: 'akemner', team: 'test', ssh_keys: 'derp_key', administrator: 'true', group: 'test' })
       stub_data_bag_item('users', 'nessus').and_return({ id: 'nessus', team: 'test', ssh_keys: 'derp_key', administrator: 'true', group: 'test' })
-      stub_data_bag_item('wordpress', 'greenbay').and_return({ id: 'greenbay' ,site_name: 'site', db_name: 'db', db_user: 'dbuser', db_password: 'derp' })
+      stub_data_bag_item('wordpress', 'vabig').and_return({ id: 'vabig' ,site_name: 'site', db_name: 'db', db_user: 'dbuser', db_password: 'derp' })
       stub_command('test -d /etc/php-fpm.d || mkdir -p /etc/php-fpm.d').and_return('')
     end.converge(described_recipe)
   end
