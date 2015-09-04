@@ -1,4 +1,4 @@
-# chef-wordpresswrapper-cookbook
+# chef-wordpress_support cookbook
 
 This cookbook installs the web components for Wordpress.  
 
