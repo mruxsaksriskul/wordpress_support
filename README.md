@@ -2,7 +2,7 @@
 
 This cookbook installs the web components for Wordpress.  
 
-Nginx, PHP, PHP-Fpm, and Wordpress, 
+Nginx, PHP, PHP-FPM, and Wordpress, 
 
 It also contains a template for Nginx to run PHP-FPM.
 
