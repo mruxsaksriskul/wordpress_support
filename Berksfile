@@ -1,7 +1,7 @@
 source 'https://gdp-chef-supermarket.gannettdigital.com'
-#source 'https://supermarket.chef.io'
+
 metadata
 
 group :integration do
-  cookbook 'apt', '~> 2.0'
+  cookbook 'data-bag-faker', path: 'test/fixtures/cookbooks/data-bag-faker'
 end
